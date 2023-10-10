@@ -473,7 +473,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     //初期化
     input_ = new Input();
-    input_->Initialize();
+    input_->Initialize(w.hInstance,hwnd);
 
 #pragma region 描画初期化処理
 
