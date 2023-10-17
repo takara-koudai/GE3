@@ -53,7 +53,8 @@ bool Input::TriggerKey(BYTE keyNumber)
 {
 
     //‰Ÿ‚³‚ê‚½uŠÔ
-    if (key[keyNumber] && !keyPre[keyNumber])
+    //!keyPre[keyNumber]
+    if (key[keyNumber] && keyPre[keyNumber] == 0)
     {
         return true;
     }
