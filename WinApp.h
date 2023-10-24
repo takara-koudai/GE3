@@ -9,7 +9,7 @@ public:
 
 	void Initialize();
 
-	void Update();
+	bool Update();
 
 	//後処理
 	void Finalize();
@@ -27,6 +27,8 @@ private:
 
 	HWND hwnd;
 	WNDCLASSEX w{};
+
+	MSG msg{};  // メッセージ
 
 };
 
