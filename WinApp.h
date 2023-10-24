@@ -11,6 +11,9 @@ public:
 
 	void Update();
 
+	//Œãˆ—
+	void Finalize();
+
 	//getter
 	HWND GetHwnd() const { return hwnd; }
 	HINSTANCE  GetHinstance() const { return w.hInstance; }
