@@ -13,7 +13,11 @@ public:
 
 	void Initialize(WinApp* winApp);
 
-	void Update();
+	//ï`âÊëOèàóù
+	void PreDraw();
+
+	//ï`âÊå„èàóù
+	void PostDraw();
 
 
 private:
@@ -49,7 +53,7 @@ private:
 
 	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> rtvHeap;
 	D3D12_DESCRIPTOR_HEAP_DESC rtvHeapDesc{};
-	std::vector<ComPtr<ID3D12Resource>> backBuffers;
+	std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> backBuffers;
 
 	Microsoft::WRL::ComPtr<IDXGISwapChain4> swapChain;
 	DXGI_SWAP_CHAIN_DESC1 swapChainDesc{};
@@ -60,5 +64,7 @@ private:
 
 	Microsoft::WRL::ComPtr<ID3D12Fence> fence;
 	UINT64 fenceVal = 0;
+
+	D3D12_RESOURCE_BARRIER barrierDesc{};
 };
 
