@@ -3,6 +3,7 @@
 #include <d3d12.h>
 #include <dxgi1_6.h>
 #include <vector>
+#include <chrono>
 
 #include "WinApp.h"
 
@@ -42,6 +43,15 @@ private:
 	//フェンス
 	void FenceInitialize();
 
+	//FPS固定初期化
+	void InitializeFixFPS();
+
+	//FPS固定更新
+	void UpdateFixFPS();
+
+	
+
+
 private:
 
 	WinApp* winApp_ = nullptr;
@@ -68,5 +78,9 @@ private:
 	UINT64 fenceVal = 0;
 
 	D3D12_RESOURCE_BARRIER barrierDesc{};
+
+	//記録用
+	std::chrono::steady_clock::time_point reference_;
+
 };
 
